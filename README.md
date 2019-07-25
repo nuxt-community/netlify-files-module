@@ -32,6 +32,23 @@ yarn add @nuxtjs/netlify-files # or npm install @nuxtjs/netlify-files
 }
 ```
 
+## Usage
+
+Currently, the module will look for `_headers` and `_redirects` files and will copy into the generate folder 
+(default: `dist`) after static generation. If you have them directly in your project folder, you don't have to do 
+anything else. In case the files are somewhere else you can configure the directory (see below)
+
+### Config
+
+```js
+export default { 
+  netlifyFiles: {
+    existingFilesDirectory: 'path/to/nuxt/directory', // The directory where your _headers and _redirects file is located
+  }
+}
+```
+
+
 ## Development
 
 1. Clone this repository
