@@ -1,6 +1,6 @@
 {
   "name": "@nuxtjs/netlify-files-module",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Nuxt module to create new _headers and _redirects files for Netlify or to use existing ones",
   "license": "MIT",
   "contributors": [
