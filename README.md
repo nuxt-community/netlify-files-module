@@ -1,4 +1,4 @@
-# @nuxtjs/netlify-files-module
+# @nuxtjs/netlify-files
 
 [![npm version][npm-version-src]][npm-version-href]
 [![npm downloads][npm-downloads-src]][npm-downloads-href]
@@ -12,22 +12,22 @@
 
 ## Setup
 
-1. Add `@nuxtjs/netlify-files-module` dependency to your project
+1. Add `@nuxtjs/netlify-files` dependency to your project
 
 ```bash
-yarn add @nuxtjs/netlify-files-module # or npm install @nuxtjs/netlify-files-module
+yarn add @nuxtjs/netlify-files # or npm install @nuxtjs/netlify-files
 ```
 
-2. Add `@nuxtjs/netlify-files-module` to the `modules` section of `nuxt.config.js`
+2. Add `@nuxtjs/netlify-files` to the `modules` section of `nuxt.config.js`
 
 ```js
 {
   modules: [
     // Simple usage
-    '@nuxtjs/netlify-files-module',
+    '@nuxtjs/netlify-files',
 
     // With options
-    ['@nuxtjs/netlify-files-module', { /* module options */ }]
+    ['@nuxtjs/netlify-files', { /* module options */ }]
   ]
 }
 ```
@@ -45,17 +45,17 @@ yarn add @nuxtjs/netlify-files-module # or npm install @nuxtjs/netlify-files-mod
 Copyright (c) Alexander Lichter <npm@lichter.io>
 
 <!-- Badges -->
-[npm-version-src]: https://img.shields.io/npm/v/@nuxtjs/netlify-files-module/latest.svg?style=flat-square
-[npm-version-href]: https://npmjs.com/package/@nuxtjs/netlify-files-module
+[npm-version-src]: https://img.shields.io/npm/v/@nuxtjs/netlify-files/latest.svg?style=flat-square
+[npm-version-href]: https://npmjs.com/package/@nuxtjs/netlify-files
 
-[npm-downloads-src]: https://img.shields.io/npm/dt/@nuxtjs/netlify-files-module.svg?style=flat-square
-[npm-downloads-href]: https://npmjs.com/package/@nuxtjs/netlify-files-module
+[npm-downloads-src]: https://img.shields.io/npm/dt/@nuxtjs/netlify-files.svg?style=flat-square
+[npm-downloads-href]: https://npmjs.com/package/@nuxtjs/netlify-files
 
-[circle-ci-src]: https://img.shields.io/circleci/project/github/nuxt-community/netlify-files-module.svg?style=flat-square
-[circle-ci-href]: https://circleci.com/gh/nuxt-community/netlify-files-module
+[circle-ci-src]: https://img.shields.io/circleci/project/github/nuxt-community/netlify-files.svg?style=flat-square
+[circle-ci-href]: https://circleci.com/gh/nuxt-community/netlify-files
 
-[codecov-src]: https://img.shields.io/codecov/c/github/nuxt-community/netlify-files-module.svg?style=flat-square
-[codecov-href]: https://codecov.io/gh/nuxt-community/netlify-files-module
+[codecov-src]: https://img.shields.io/codecov/c/github/nuxt-community/netlify-files.svg?style=flat-square
+[codecov-href]: https://codecov.io/gh/nuxt-community/netlify-files
 
-[license-src]: https://img.shields.io/npm/l/@nuxtjs/netlify-files-module.svg?style=flat-square
-[license-href]: https://npmjs.com/package/@nuxtjs/netlify-files-module
+[license-src]: https://img.shields.io/npm/l/@nuxtjs/netlify-files.svg?style=flat-square
+[license-href]: https://npmjs.com/package/@nuxtjs/netlify-files
