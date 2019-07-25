@@ -1,0 +1,46 @@
+{
+  "name": "@nuxtjs/netlify-files-module",
+  "version": "0.0.0",
+  "description": "Nuxt module to create new _headers and _redirects files for Netlify or to use existing ones",
+  "license": "MIT",
+  "contributors": [
+    {
+      "name": "Alexander Lichter <npm@lichter.io>"
+    }
+  ],
+  "main": "lib/module.js",
+  "repository": "nuxt-community/netlify-files-module",
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "dev": "nuxt example",
+    "lint": "eslint --ext .js,.vue example lib test",
+    "test": "yarn lint && jest",
+    "release": "yarn test && standard-version && git push --follow-tags && npm publish"
+  },
+  "files": [
+    "lib"
+  ],
+  "dependencies": {
+    "fs-extra": "^8.1.0"
+  },
+  "devDependencies": {
+    "@babel/core": "latest",
+    "@babel/preset-env": "latest",
+    "@commitlint/cli": "latest",
+    "@commitlint/config-conventional": "latest",
+    "@nuxtjs/eslint-config": "latest",
+    "babel-eslint": "latest",
+    "babel-jest": "latest",
+    "codecov": "latest",
+    "eslint": "latest",
+    "get-port": "latest",
+    "husky": "latest",
+    "jest": "latest",
+    "nuxt-edge": "latest",
+    "request": "latest",
+    "request-promise-native": "latest",
+    "standard-version": "latest"
+  }
+}
