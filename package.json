@@ -2,6 +2,7 @@
   "name": "@nuxtjs/netlify-files",
   "version": "1.0.0",
   "description": "Nuxt module to create new _headers and _redirects files for Netlify or to use existing ones",
+  "repository": "nuxt-community/netlify-files-module",
   "license": "MIT",
   "contributors": [
     {
@@ -9,38 +10,29 @@
     }
   ],
   "main": "lib/module.js",
-  "repository": "nuxt-community/netlify-files-module",
-  "publishConfig": {
-    "access": "public"
-  },
-  "scripts": {
-    "dev": "nuxt example",
-    "lint": "eslint --ext .js,.vue example lib test",
-    "test": "yarn lint && jest",
-    "release": "yarn test && standard-version && git push --follow-tags && npm publish"
-  },
   "files": [
     "lib"
   ],
+  "scripts": {
+    "lint": "eslint --ext .js,.vue .",
+    "release": "yarn test && standard-version && git push --follow-tags && npm publish",
+    "test": "yarn lint && jest"
+  },
   "dependencies": {
-    "fs-extra": "^8.1.0"
+    "consola": "^2.11.3"
   },
   "devDependencies": {
-    "@babel/core": "latest",
-    "@babel/preset-env": "latest",
     "@commitlint/cli": "latest",
     "@commitlint/config-conventional": "latest",
     "@nuxtjs/eslint-config": "latest",
-    "babel-eslint": "latest",
-    "babel-jest": "latest",
-    "codecov": "latest",
+    "@nuxtjs/module-test-utils": "latest",
     "eslint": "latest",
-    "get-port": "latest",
     "husky": "latest",
     "jest": "latest",
     "nuxt-edge": "latest",
-    "request": "latest",
-    "request-promise-native": "latest",
     "standard-version": "latest"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
