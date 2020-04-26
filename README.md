@@ -2,7 +2,7 @@
 
 [![npm version][npm-version-src]][npm-version-href]
 [![npm downloads][npm-downloads-src]][npm-downloads-href]
-[![Circle CI][circle-ci-src]][circle-ci-href]
+[![Github Actions CI][github-actions-ci-src]][github-actions-ci-href]
 [![Codecov][codecov-src]][codecov-href]
 [![License][license-src]][license-href]
 
@@ -15,14 +15,14 @@
 1. Add `@nuxtjs/netlify-files` dependency to your project
 
 ```bash
-yarn add @nuxtjs/netlify-files # or npm install @nuxtjs/netlify-files
+yarn add --dev @nuxtjs/netlify-files # or npm install --save-dev @nuxtjs/netlify-files
 ```
 
-2. Add `@nuxtjs/netlify-files` to the `modules` section of `nuxt.config.js`
+2. Add `@nuxtjs/netlify-files` to the `buildModules` section of `nuxt.config.js`
 
 ```js
-{
-  modules: [
+export default {
+  buildModules: [
     // Simple usage
     '@nuxtjs/netlify-files',
 
@@ -32,47 +32,69 @@ yarn add @nuxtjs/netlify-files # or npm install @nuxtjs/netlify-files
 }
 ```
 
-## Usage
+:warning: If you are using Nuxt **< v2.9** you have to install the module as a `dependency` (No `--dev` or `--save-dev` flags) and use `modules` section in `nuxt.config.js` instead of `buildModules`.
 
-Currently, the module will look for `_headers` and `_redirects` files and will copy into the generate folder 
-(default: `dist`) after static generation. If you have them directly in your project folder, you don't have to do 
-anything else. In case the files are somewhere else you can configure the directory (see below)
-
-### Config
+### Using top level options
 
 ```js
-export default { 
+export default {
+  buildModules: [
+    '@nuxtjs/netlify-files'
+  ],
+  netlifyFiles: {
+    /* module options */
+  }
+}
+```
+
+## Options
+
+### `copyExistingFiles`
+
+- Type: `Boolean`
+- Default: `true`
+
+Enable/disable copying of existing files.
+
+### `existingFilesDirectory`
+
+- Type: `String`
+- Default: `srcDir`
+
+The directory where your _headers and _redirects file is located.
+
+## Usage
+
+Currently, the module will look for `_headers` and `_redirects` files and will copy into the generate folder
+(default: `dist`) after static generation. If you have them directly in your project folder, you don't have to do
+anything else. In case the files are somewhere else you can configure the directory (see below)
+
+```js
+export default {
   netlifyFiles: {
     existingFilesDirectory: 'path/to/nuxt/directory', // The directory where your _headers and _redirects file is located
   }
 }
 ```
 
-
-## Development
-
-1. Clone this repository
-2. Install dependencies using `yarn install` or `npm install`
-3. Start development server using `npm run dev`
-
 ## License
 
 [MIT License](./LICENSE)
 
-Copyright (c) Alexander Lichter <npm@lichter.io>
+Copyright (c) Nuxt Community
 
 <!-- Badges -->
-[npm-version-src]: https://img.shields.io/npm/v/@nuxtjs/netlify-files/latest.svg?style=flat-square
+[npm-version-src]: https://img.shields.io/npm/v/@nuxtjs/netlify-files/latest.svg
 [npm-version-href]: https://npmjs.com/package/@nuxtjs/netlify-files
 
-[npm-downloads-src]: https://img.shields.io/npm/dt/@nuxtjs/netlify-files.svg?style=flat-square
+[npm-downloads-src]: https://img.shields.io/npm/dt/@nuxtjs/netlify-files.svg
 [npm-downloads-href]: https://npmjs.com/package/@nuxtjs/netlify-files
 
-[circle-ci-src]: https://img.shields.io/circleci/project/github/nuxt-community/netlify-files.svg?style=flat-square
-[circle-ci-href]: https://circleci.com/gh/nuxt-community/netlify-files
+[github-actions-ci-src]: https://github.com/nuxt-community/netlify-files-module/workflows/ci/badge.svg
+[github-actions-ci-href]: https://github.com/nuxt-community/netlify-files-module/actions?query=workflow%3Aci
 
-[codecov-src]: https://img.shields.io/codecov/c/github/nuxt-community/netlify-files.svg?style=flat-square
-[codecov-href]: https://codecov.io/gh/nuxt-community/netlify-files
+[codecov-src]: https://img.shields.io/codecov/c/github/nuxt-community/netlify-files-module.svg
+[codecov-href]: https://codecov.io/gh/nuxt-community/netlify-files-module
 
-[license-src]: https://img.shields.io/npm/l/@nuxtjs/netlify-files.svg?style=flat-square
+[license-src]: https://img.shields.io/npm/l/@nuxtjs/netlify-files.svg
 [license-href]: https://npmjs.com/package/@nuxtjs/netlify-files
