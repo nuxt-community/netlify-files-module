@@ -19,6 +19,7 @@
     "test": "yarn lint && jest"
   },
   "dependencies": {
+    "@iarna/toml": "^2.2.5",
     "consola": "^2.11.3"
   },
   "devDependencies": {
