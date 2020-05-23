@@ -6,7 +6,7 @@
 [![Codecov][codecov-src]][codecov-href]
 [![License][license-src]][license-href]
 
-> Nuxt module to create new _headers and _redirects files for Netlify or to use existing ones
+> Nuxt module to create new _headers, _redirects and netlify.toml files for Netlify or to use existing ones
 
 [📖 **Release Notes**](./CHANGELOG.md)
 
@@ -61,18 +61,18 @@ Enable/disable copying of existing files.
 - Type: `String`
 - Default: `srcDir`
 
-The directory where your _headers and _redirects file is located.
+The directory where your _headers, _redirects and netlify.toml files are located.
 
 ## Usage
 
-Currently, the module will look for `_headers` and `_redirects` files and will copy into the generate folder
+Currently, the module will look for `_headers`, `_redirects` and `netlify.toml` files and will copy them into the generate folder
 (default: `dist`) after static generation. If you have them directly in your project folder, you don't have to do
 anything else. In case the files are somewhere else you can configure the directory (see below)
 
 ```js
 export default {
   netlifyFiles: {
-    existingFilesDirectory: 'path/to/nuxt/directory', // The directory where your _headers and _redirects file is located
+    existingFilesDirectory: 'path/to/nuxt/directory', // The directory where your _headers, _redirects and netlify.toml files are located
   }
 }
 ```
