@@ -1,6 +1,6 @@
-const { join, resolve } = require('path')
 const { existsSync } = require('fs')
 const { generate, loadConfig } = require('@nuxtjs/module-test-utils')
+const { resolvePaths } = require('./utils')
 
 describe('disable', () => {
   let nuxt
@@ -14,10 +14,7 @@ describe('disable', () => {
   })
 
   test('should not copies netlify files', () => {
-    const distBasePath = resolve(nuxt.options.rootDir, nuxt.options.generate.dir)
-    const headersPath = join(distBasePath, '_headers')
-    const redirectsPath = join(distBasePath, '_redirects')
-    const tomlPath = join(distBasePath, 'netlify.toml')
+    const { headersPath, redirectsPath, tomlPath } = resolvePaths(nuxt)
 
     expect(existsSync(headersPath)).toBe(false)
     expect(existsSync(redirectsPath)).toBe(false)
