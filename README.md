@@ -6,7 +6,7 @@
 [![Codecov][codecov-src]][codecov-href]
 [![License][license-src]][license-href]
 
-> Nuxt module to create new _headers and _redirects files for Netlify or to use existing ones
+> Nuxt module to create new _headers, _redirects and netlify.toml files for Netlify or to use existing ones
 
 [📖 **Release Notes**](./CHANGELOG.md)
 
@@ -61,21 +61,62 @@ Enable/disable copying of existing files.
 - Type: `String`
 - Default: `srcDir`
 
-The directory where your _headers and _redirects file is located.
+The directory where your _headers, _redirects and netlify.toml files that should be copied are located.
+
+### `netlifyToml`
+
+- Type: `Object` or `Function` (must return `Object`)
+- Default: `undefined`
+
+Object to create a `netlify.toml` from. If set, `netlify.toml` will not be copied, but programmatically created instead.
 
 ## Usage
 
-Currently, the module will look for `_headers` and `_redirects` files and will copy into the generate folder
-(default: `dist`) after static generation. If you have them directly in your project folder, you don't have to do
-anything else. In case the files are somewhere else you can configure the directory (see below)
+### Copying
+
+The module will look for `_headers`, `_redirects` and `netlify.toml` files and will copy them into the generate folder
+(default: `dist`) after static generation. If you have them directly in your project folder, you don't have to do anything else. In case the files are somewhere else, you can configure the directory (see below)
 
 ```js
 export default {
   netlifyFiles: {
-    existingFilesDirectory: 'path/to/nuxt/directory', // The directory where your _headers and _redirects file is located
+    existingFilesDirectory: 'path/to/nuxt/directory', // The directory where your _headers, _redirects and netlify.toml files are located
   }
 }
 ```
+
+### Creating a new `netlify.toml`
+
+For `netlify.toml`, instead of just copying it, it is also possible to create a new one. This could be useful if certain configurations need to be set dynamically.
+Since with `netlify.toml` also redirects and headers can be set, using this option makes it possible to dynamically create those as well, making `_redirects` and `_headers` files redundant.
+
+Note that if `netlifyToml` is set, the module will create the new toml directly in the destination folder. It will ignore the netlify.toml (if it does exist) in the source folder.
+
+```js
+export default {
+  netlifyFiles: {
+    netlifyToml: {
+      build: {
+        environment: { FOO: process.env.FOO }
+      },
+      headers: [
+        {
+          for: '/*',
+          values: { 'X-XSS-Protection': '1; mode=block' }
+        }
+      ],
+      redirects: [
+        {
+          from: '/old',
+          to: '/new',
+          status: 302
+        }
+      ]
+    }
+  }
+}
+```
+
 
 ## License
 

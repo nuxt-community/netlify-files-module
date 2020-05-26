@@ -17,8 +17,10 @@ describe('disable', () => {
     const distBasePath = resolve(nuxt.options.rootDir, nuxt.options.generate.dir)
     const headersPath = join(distBasePath, '_headers')
     const redirectsPath = join(distBasePath, '_redirects')
+    const tomlPath = join(distBasePath, 'netlify.toml')
 
     expect(existsSync(headersPath)).toBe(false)
     expect(existsSync(redirectsPath)).toBe(false)
+    expect(existsSync(tomlPath)).toBe(false)
   })
 })
