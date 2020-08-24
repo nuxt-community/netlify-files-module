@@ -20,7 +20,7 @@
   },
   "dependencies": {
     "@iarna/toml": "^2.2.5",
-    "consola": "^2.12.2"
+    "consola": "^2.15.0"
   },
   "devDependencies": {
     "@commitlint/cli": "latest",
