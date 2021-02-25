@@ -56,6 +56,13 @@ export default {
 
 Enable/disable copying of existing files.
 
+### `detectForms`
+
+- Type: `Boolean`
+- Default: `false`
+
+Enable/disable forms detection netlify. See https://docs.netlify.com/forms/setup/
+
 ### `existingFilesDirectory`
 
 - Type: `String`
