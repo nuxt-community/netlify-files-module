@@ -20,7 +20,8 @@
   },
   "dependencies": {
     "@iarna/toml": "^2.2.5",
-    "consola": "^2.15.0"
+    "consola": "^2.15.0",
+    "node-html-parser": "^3.0.3"
   },
   "devDependencies": {
     "@commitlint/cli": "latest",
