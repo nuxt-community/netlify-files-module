@@ -70,7 +70,8 @@ async function programmaticallyCreateToml ({ netlifyToml }: ModuleOptions) {
   const tomlObject = typeof netlifyToml === 'function' ? await netlifyToml() : netlifyToml
 
   if (typeof tomlObject !== 'object') {
-    throw new TypeError('`netlifyToml` must be an object, or a function that returns an object')
+    logger.warn('`netlifyToml` must be an object, or a function that returns an object')
+    return
   }
 
   const toml = tomlStringify(tomlObject)
