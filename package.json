@@ -8,36 +8,48 @@
     "Alexander Lichter <npm@lichter.io>",
     "Ricardo Gobbo de Souza <ricardogobbosouza@yahoo.com.br>"
   ],
-  "main": "./dist/module.js",
-  "types": "./dist/module.d.ts",
+  "exports": {
+    ".": {
+      "require": "./index.cjs",
+      "import": "./dist/index.mjs"
+    }
+  },
+  "sideEffects": false,
+  "main": "./index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
   "files": [
-    "dist"
+    "dist",
+    "index.cjs"
   ],
   "scripts": {
-    "build": "siroc build",
+    "dev": "unbuild --stub",
+    "build": "unbuild",
     "prepublishOnly": "yarn build",
     "lint": "eslint --ext .js,.ts,.vue .",
     "release": "yarn test && yarn build && standard-version && git push --follow-tags && npm publish",
-    "test": "yarn lint && yarn jest"
+    "test": "yarn lint && NODE_OPTIONS=--experimental-vm-modules yarn jest"
   },
   "dependencies": {
     "@iarna/toml": "^2.2.5",
     "consola": "^2.15.0",
-    "defu": "^3.2.2",
-    "node-html-parser": "^3.0.3"
+    "defu": "^5.0.0",
+    "node-html-parser": "^5.2.0"
   },
   "devDependencies": {
     "@babel/preset-typescript": "latest",
+    "@nuxt/bridge": "npm:@nuxt/bridge-edge",
+    "@nuxt/kit": "^0.8.1-edge",
     "@nuxt/test-utils": "latest",
-    "@nuxt/types": "latest",
+    "@nuxt/types": "^2.15.8",
     "@nuxtjs/eslint-config-typescript": "latest",
     "@types/jest": "latest",
     "@types/node": "latest",
     "eslint": "latest",
     "jest": "latest",
-    "nuxt": "latest",
-    "siroc": "latest",
-    "standard-version": "latest"
+    "nuxt-edge": "latest",
+    "standard-version": "latest",
+    "unbuild": "^0.6.7"
   },
   "publishConfig": {
     "access": "public"
