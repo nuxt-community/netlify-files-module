@@ -24,7 +24,7 @@
     "@iarna/toml": "^2.2.5",
     "consola": "^2.15.0",
     "defu": "^3.2.2",
-    "node-html-parser": "^3.0.3"
+    "node-html-parser": "^5.3.3"
   },
   "devDependencies": {
     "@babel/preset-typescript": "latest",
