@@ -6,7 +6,7 @@
 [![Codecov][codecov-src]][codecov-href]
 [![License][license-src]][license-href]
 
-> Nuxt module to create new _headers, _redirects and netlify.toml files for Netlify or to use existing ones
+> Nuxt 2 module to create new _headers, _redirects and netlify.toml files for Netlify or to use existing ones
 
 [📖 **Release Notes**](./CHANGELOG.md)
 
